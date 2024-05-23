@@ -1,15 +1,15 @@
 import React from "react";
 
-import Logo from '../assests/Logo.svg';
-import Nav from './Nav';
+import Logo from "../assests/Logo.svg";
+import Nav from "./Nav";
 
 const Header = () => (
-  <React.Fragment>
-    <a href='/' title='Little Lemon'>
-      <img src={Logo} alt='Little Lemon Logo' />
+  <header className="container centerContainer">
+    <a href="/" title="Little Lemon">
+      <img src={Logo} alt="Little Lemon Logo" width="200px" />
     </a>
     <Nav />
-  </React.Fragment>
+  </header>
 );
 
 export default Header;
