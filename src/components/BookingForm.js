@@ -11,12 +11,13 @@ const BookingForm = ({ state, handleChange, handleSubmit }) => (
         onChange={handleChange}
         value={state.date}
         min={TODAY}
+        required
       />
     </div>
 
     <div className="field">
       <label htmlFor="restime">Choose time:</label>
-      <select id="restime" name="restime" onChange={handleChange}>
+      <select id="restime" name="restime" onChange={handleChange} required>
         {state.availableTimes.map((time, index) => (
           <option value={time} key={`${time}-${index}`}>
             {time}
@@ -30,17 +31,19 @@ const BookingForm = ({ state, handleChange, handleSubmit }) => (
       <input
         type="number"
         id="guests"
+        aria-label="guests"
         name="guests"
         placeholder="1"
         min="1"
         max="10"
+        required
         onChange={handleChange}
       />
     </div>
 
     <div className="field">
       <label htmlFor="occasion">Occasion:</label>
-      <select id="occasion" onChange={handleChange}>
+      <select id="occasion" onChange={handleChange} required>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import { initialState, updateTimes } from "./App";
 import BookingPage, { TODAY } from "./components/BookingPage";
@@ -37,4 +37,31 @@ test("Update times", () => {
   expect(updatedState.guests).toEqual(expectedUpdatedState.guests);
   expect(updatedState.restime).toEqual(expectedUpdatedState.restime);
   expect(updatedState.occasion).toEqual(expectedUpdatedState.occasion);
+});
+
+test("Form validation", async () => {
+  render(
+    <BookingPage
+      dispatch={() => true}
+      submitForm={() => true}
+      state={{ date: TODAY, availableTimes: fetchAPI(new Date()) }}
+    />
+  );
+
+  const submitButton = screen.getByText("Make Your Reservation");
+  const guests = screen.getByLabelText("guests");
+
+  // Send the form without no guests value
+  await fireEvent.click(submitButton);
+  expect(guests).toBeInvalid();
+
+  // Set 0 for guests so it is invalid
+  fireEvent.change(guests, { target: { value: 0 } });
+  await fireEvent.click(submitButton);
+  expect(guests).toBeInvalid();
+
+  // Set 2 for guests so it is valid
+  fireEvent.change(guests, { target: { value: 2 } });
+  await fireEvent.click(submitButton);
+  expect(guests).toBeValid();
 });
