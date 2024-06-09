@@ -44,7 +44,7 @@ const Testimonials = () => (
     <h2>Testimonials</h2>
     <ul className="gridContainer centerContainer">
       {testimonials.map((person, index) => (
-        <li index={`${person.id}-${index}`}>
+        <li key={`${person.id}-${index}`}>
           <img src={person.img} alt={person.name} className="person" />
           <Rating value={person.rating} />
           <h3>{person.name}</h3>

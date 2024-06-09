@@ -52,6 +52,10 @@ a {
   color: #495e57;
 }
 
+button {
+  background-color: transparent;
+}
+
 /** Containers
 *************************************/
 .container {
@@ -90,6 +94,7 @@ a {
 *************************************/
 .button {
   color: #495e57;
+  cursor: pointer;
   font-weight: bold;
   display: inline-flex;
   text-decoration: none;
@@ -119,6 +124,27 @@ a {
 
 .secondary-button:hover {
   text-decoration: underline;
+}
+
+/* Forms
+*************************************/
+.field {
+  display: grid;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #495e57;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  border-radius: 4px;
+  border: 1px solid #495e57;
+  font-size: 1.2rem;
+  padding: 10px;
 }
 
 /** Header
@@ -234,6 +260,7 @@ header nav ul li a:hover {
   background-color: #fff;
   flex-direction: column;
   padding-bottom: 50px;
+  text-align: left;
 }
 
 #specials header {
@@ -291,6 +318,7 @@ header nav ul li a:hover {
   flex-direction: column;
   align-items: center;
   padding: 50px 20px;
+  text-align: left;
 }
 
 #testimonials h2 {
@@ -386,6 +414,36 @@ header nav ul li a:hover {
   margin-bottom: 10px;
 }
 
+/** Reservations
+*************************************/
+#reservations {
+  background-color: #fff;
+  border-radius: 16px;
+  flex-direction: column;
+  text-align: left;
+}
+
+#reservations h2 {
+  font-size: 4rem;
+}
+
+#bookingForm {
+  display: grid;
+}
+
+/** Success Booking
+*************************************/
+#successBooking {
+  background-color: #fff;
+  border-radius: 16px;
+  flex-direction: column;
+}
+
+#successBooking p {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
 /** Footer
 *************************************/
 footer.gridContainer {
@@ -406,6 +464,7 @@ footer dt {
 @media only screen and (min-width: 600px) {
   #banner > div {
     grid-template-columns: 1fr 1fr;
+    text-align: left;
   }
 
   #banner img {
@@ -487,6 +546,12 @@ footer dt {
     right: -20px;
   }
 
+  #bookingForm {
+    align-items: end;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+  }
+
   footer {
     grid-template-columns: 200px 10fr;
   }
@@ -495,6 +560,7 @@ footer dt {
     display: inline-grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    text-align: left;
   }
 }
 

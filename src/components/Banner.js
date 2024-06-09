@@ -1,5 +1,4 @@
 import BannerImg from "../assests/img1.jpg";
-import Button from "./Button";
 
 const Banner = () => (
   <section id="banner" className="container">
@@ -11,7 +10,13 @@ const Banner = () => (
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <Button text="Reserve a Table" />
+        <a
+          title="Reserve a Table"
+          href="/reservations"
+          className="primary-button button"
+        >
+          Reserve a Table
+        </a>
       </div>
 
       <img src={BannerImg} alt="A man carrying a tray with food" />
