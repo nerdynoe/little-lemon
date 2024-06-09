@@ -53,6 +53,7 @@ const BookingForm = ({ state, handleChange, handleSubmit }) => (
       type="submit"
       className="primary-button button"
       value="Make Your Reservation"
+      aria-label="On Click"
     />
   </form>
 );

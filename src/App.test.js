@@ -48,7 +48,7 @@ test("Form validation", async () => {
     />
   );
 
-  const submitButton = screen.getByText("Make Your Reservation");
+  const submitButton = screen.getByLabelText("On Click");
   const guests = screen.getByLabelText("guests");
 
   // Send the form without no guests value
